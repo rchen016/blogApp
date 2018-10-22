@@ -2,6 +2,7 @@ var express = require("express"),
         app = express(),
  bodyParser = require("body-parser"),
  methordOverride = require("method-override"),
+ expressSanitizer = require("express-sanitizer"),
    mongoose = require("mongoose"),
    path     = require("path");
 
@@ -10,6 +11,7 @@ mongoose.connect("mongodb://localhost/blogApp");
 app.set("view engine","ejs");
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(expressSanitizer());
 app.use(methordOverride("_method"));
 
 //Blog Schema
@@ -54,6 +56,9 @@ app.get("/blogs/new",function(req,res){
 
 //Post request for creating new Blog Post
 app.post("/blogs",function(req,res){
+	console.log(req.body);
+	req.body.blog.body = req.sanitize(req.body.blog.body);
+	console.log(req.body);
 	Blog.create(req.body.blog,function(err,newlyCreated){
 		if(err){
 			res.render("new");
@@ -92,6 +97,7 @@ app.get("/blogs/:id/edit",function(req,res){
 
 //Update Route
 app.put("/blogs/:id",function(req,res){
+	req.body.blog.body = req.sanitize(req.body.blog.body);
 	Blog.findByIdAndUpdate(req.params.id, req.body.blog,function(err,updatedBlog){
 		if(err){
 			console.log("error");
@@ -120,3 +126,10 @@ app.delete("/blogs/:id",function(req,res){
 app.listen(3000, process.env.IP,function(){
 	console.log("Server Up");
 });
+
+// var userSchema = new mongoose.Schema({
+//   email: String,
+//   name: String,
+//   posts: [postSchema]},
+//   {usePushEach: true}
+// );
