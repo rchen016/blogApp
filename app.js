@@ -11,11 +11,10 @@ var express          = require("express"),
 	seedDB           = require("./seeds"),
     path             = require("path");
 
-var url = process.env.DATABASEURL || "mongodb://localhost/exercise_app";
+var url = process.env.DATABASEURL || "mongodb://localhost/blogApp";
 mongoose.connect(url);
 
 //Default Config
-mongoose.connect("mongodb://localhost/blogApp");
 app.set("view engine","ejs");
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended:true}));

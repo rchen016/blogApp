@@ -28,7 +28,7 @@ var data = [
 	{
 		title: "Junior National USA Team",
 		image: "https://i.imgur.com/bXk0Xls.jpg",
-		body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pulvinar felis viverra magna iaculis accumsan. Vestibulum quis ante blandit, condimentum augue ac, egestas odio. Ut dapibus dolor risus, vel aliquet sem venenatis sed. Maecenas vel tristique ex. Nulla sollicitudin aliquam elit nec pellentesque."
+		body: "In 2002, Carmelo played for the USA Junior National League with Chris Bosh. They were defated in the semifinals and ended with Bronze. Carmelo sported a 15.6-4.4-1.8-1.2 (Points-Rebound-Assist-Steal) averages."
 	},
 	{
 		title: "Syracuse",
