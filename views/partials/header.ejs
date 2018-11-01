@@ -7,8 +7,14 @@
 	<body>
 		<div class="ui fixed inverted menu">
 			<div class="ui container">
-				<div class="header item"><i class="code icon"></i>Blog Site</div>
+				<div class="header item"><a href="/login"><i class="code icon"></a></i>Blog Site</div>
 				<a href="/" class="item">Home</a>
-				<a href="/blogs/new" class="item">New Post</a>
+				<%if(currentUser && currentUser.username=="admin"){%>
+					<a href="/blogs/new" class="item">New Post</a>
+				<%}%>
+				<%if(currentUser){%>
+					<a href="#" class="item"><%= currentUser.username %></a>
+					<a href="/logout" class="item">Logout</a>
+				<%}%>
 			</div>
 		</div>

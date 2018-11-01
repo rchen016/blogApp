@@ -1,10 +1,15 @@
-var express = require("express"),
-        app = express(),
- bodyParser = require("body-parser"),
- methordOverride = require("method-override"),
- expressSanitizer = require("express-sanitizer"),
-   mongoose = require("mongoose"),
-   path     = require("path");
+var express          = require("express"),
+    app              = express(),
+    bodyParser       = require("body-parser"),
+    methordOverride  = require("method-override"),
+    expressSanitizer = require("express-sanitizer"),
+    mongoose         = require("mongoose"),
+    passport         = require("passport"),
+    LocalStrategy    = require("passport-local"),
+	User             = require("./models/user"),
+	Blog             = require("./models/blog"),
+	seedDB           = require("./seeds"),
+    path             = require("path");
 
 //Default Config
 mongoose.connect("mongodb://localhost/blogApp");
@@ -14,23 +19,23 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(expressSanitizer());
 app.use(methordOverride("_method"));
 
-//Blog Schema
-var blogSchema = new mongoose.Schema({
-	title: String,
-	image: String,
-	body: String,
-	created: {type: Date, default: Date.now}
+//passport
+app.use(require("express-session")({
+	secret: "testtesttest",
+	resave: false,
+	saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+seedDB();
+
+app.use(function(req,res,next){
+	res.locals.currentUser = req.user;
+	next();
 });
-
-var Blog = mongoose.model("Blog", blogSchema);
-
-//Routes
-
-// Blog.create({
-// 	title: "Fox",
-// 	image: "https://images.unsplash.com/photo-1540153448870-af780343526e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=156b02ddcd899f8e70270bf6c4f57932&auto=format&fit=crop&w=1350&q=80",
-// 	body: "Fox being a Fox"
-// });
 
 //redirect homepage to landingpage
 app.get("/",function(req,res){
@@ -82,6 +87,18 @@ app.get("/blogs/:id",function(req,res){
 	});
 });
 
+//Details of a blog
+app.get("/login",function(req,res){
+	res.render("login");
+});
+
+app.post("/login", passport.authenticate("local",
+	{
+		successRedirect: "/blogs",
+		failureRedirect: "/login"
+	}),function(req,res){
+});
+
 //Edit a POST
 app.get("/blogs/:id/edit",function(req,res){
 	Blog.findById(req.params.id,function(err,foundBlog){
@@ -93,6 +110,12 @@ app.get("/blogs/:id/edit",function(req,res){
 			res.render("edit",{blog:foundBlog});
 		}
 	});
+});
+
+//Logout
+app.get("/logout",function(req,res){
+	req.logout();
+	res.redirect("/blogs");
 });
 
 //Update Route
@@ -110,7 +133,6 @@ app.put("/blogs/:id",function(req,res){
 });
 
 //Delete Route
-
 app.delete("/blogs/:id",function(req,res){
 	Blog.findByIdAndRemove(req.params.id,function(err){
 		if(err){
@@ -126,10 +148,3 @@ app.delete("/blogs/:id",function(req,res){
 app.listen(3000, process.env.IP,function(){
 	console.log("Server Up");
 });
-
-// var userSchema = new mongoose.Schema({
-//   email: String,
-//   name: String,
-//   posts: [postSchema]},
-//   {usePushEach: true}
-// );

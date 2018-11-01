@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+
+<div class="container">
+	<h1 style="text-align:center;">Login</h1>
+	<div style="width:30%; margin:25px auto;">
+		<form action="/login" method="POST" class="ui form">
+		  <div class="field">
+			<label>User</label>
+			<input type="text" name="username" placeholder="Username">
+		  </div>
+		  <div class="field">
+		    <label>Password</label>
+		    <input type="password" name="password" placeholder="Password">
+		  </div>
+		  <div class="field">
+		    <div class="ui checkbox">
+		      <input type="checkbox" tabindex="0" class="hidden">
+		      <label>Remember Me</label>
+		    </div>
+		  </div>
+		  <button class="ui button" type="submit">Submit</button>
+		</form>
+	</div>
+</div>
+
+<% include ./partials/footer %>
