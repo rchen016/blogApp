@@ -11,6 +11,9 @@ var express          = require("express"),
 	seedDB           = require("./seeds"),
     path             = require("path");
 
+var url = process.env.DATABASEURL || "mongodb://localhost/exercise_app";
+mongoose.connect(url);
+
 //Default Config
 mongoose.connect("mongodb://localhost/blogApp");
 app.set("view engine","ejs");
@@ -145,6 +148,6 @@ app.delete("/blogs/:id",function(req,res){
 	});
 });
 
-app.listen(3000, process.env.IP,function(){
-	console.log("Server Up");
+app.listen(process.env.PORT||3000, process.env.IP, function(){
+  console.log("Server Up...");
 });
