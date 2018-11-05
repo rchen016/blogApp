@@ -79,11 +79,14 @@ function seedDB(){
 			console.log("Failed to Delete");
 		}
 	})
-	Blog.create(data,function(err){
-		if(err){
-			console.log("Hm");
-		}
+	data.forEach(function(seed){
+		Blog.create(seed,function(err){
+			if(err){
+				console.log("Hm");
+			}
+		});
 	});
+
 	var newUser = new User({username: "admin"});
 	var password = "zx1230321";
 	console.log("ReCreate Admin");
