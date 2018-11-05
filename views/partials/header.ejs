@@ -11,6 +11,7 @@
 				<a href="/" class="item">Home</a>
 				<%if(currentUser && currentUser.username=="admin"){%>
 					<a href="/blogs/new" class="item">New Post</a>
+					<a href="/seedDB" class="item">Seed DB</a>
 				<%}%>
 				<%if(currentUser){%>
 					<a href="#" class="item"><%= currentUser.username %></a>
