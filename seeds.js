@@ -74,28 +74,31 @@ var data = [
 
 function seedDB(){
 	console.log("Let's Seed!");
-	Blog.remove({},function(err){
-		if(err){
-			console.log("Failed to Delete");
-		}
 		data.forEach(function(seed){
-			Blog.create(seed,function(err){
-				if(err){
-					console.log("Hm");
-				}
-			});
+			console.log(seed.title);
 		});
-	});
+	// Blog.remove({},function(err){
+	// 	if(err){
+	// 		console.log("Failed to Delete");
+	// 	}
+	// 	data.forEach(function(seed){
+	// 		Blog.create(seed,function(err){
+	// 			if(err){
+	// 				console.log("Hm");
+	// 			}
+	// 		});
+	// 	});
+	// });
 
-
-	var newUser = new User({username: "admin"});
-	var password = "zx1230321";
-	console.log("ReCreate Admin");
-	User.register(newUser, password,function(err){
-	 if(err){
-		 console.log("err");
-	 }
-	});
+	//
+	// var newUser = new User({username: "admin"});
+	// var password = "zx1230321";
+	// console.log("ReCreate Admin");
+	// User.register(newUser, password,function(err){
+	//  if(err){
+	// 	 console.log("err");
+	//  }
+	// });
 }
 
 module.exports = seedDB;
