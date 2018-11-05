@@ -77,18 +77,18 @@ function seedDB(){
 		data.forEach(function(seed){
 			console.log(seed.title);
 		});
-	// Blog.remove({},function(err){
-	// 	if(err){
-	// 		console.log("Failed to Delete");
-	// 	}
-	// 	data.forEach(function(seed){
-	// 		Blog.create(seed,function(err){
-	// 			if(err){
-	// 				console.log("Hm");
-	// 			}
-	// 		});
-	// 	});
-	// });
+	Blog.remove({},function(err){
+		if(err){
+			console.log("Failed to Delete");
+		}
+		data.forEach(function(seed){
+			Blog.create(seed,function(err){
+				if(err){
+					console.log("Hm");
+				}
+			});
+		});
+	});
 
 	//
 	// var newUser = new User({username: "admin"});
