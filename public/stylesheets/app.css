@@ -11,22 +11,20 @@ i.icon{
 }
 
 .parallaxCoverL {
-	position: fixed;
-	width: 100%;
+	position: fixed !important;
+	width: 31.25%;
 	height: 100%;
 	background: url("https://i.imgur.com/mQRBAmT.jpg") no-repeat;
 	background-size: cover;
-	will-change: transform;
 	z-index: -1;
 }
 
 .parallaxCoverR {
-	position: fixed;
-	width: 100%;
+	position: fixed !important;
+	width: 31.25%;
 	height: 100%;
 	background: url("https://i.imgur.com/uxxBGXt.jpg") no-repeat;
 	background-size: cover;
-	will-change: transform;
 	z-index: -1;
 }
 

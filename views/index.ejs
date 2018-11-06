@@ -1,7 +1,11 @@
 <% include ./partials/header %>
 <div class="ui grid">
-	<div class="parallaxCoverL five wide column"></div>
+	<div class="five wide column">
+		<div class="parallaxCoverL">
+		</div>
+	</div>
 	<div class="ui main text container  six wide centered column">
+		<h1 class="ui header">Timeline</h1>
 		<div class="ui top attached segment">
 			<div class="ui divided items">
 				<% blogs.forEach(function(blog){ %>
@@ -31,7 +35,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="parallaxCoverR five wide column right floated left aligned"></div>
+	<div class=" five wide column right floated left aligned">
+		<div class="parallaxCoverR"></div>
+	</div>
 </div>
 
 
