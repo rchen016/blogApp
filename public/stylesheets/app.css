@@ -2,10 +2,28 @@ i.icon{
 	font-size: 2em;
 }
 
+#delete{
+	display: inline;
+}
+
 .container.main{
 	margin-top: 7em;
 }
 
-#delete{
-	display: inline;
+.parallaxCoverL {
+    /* The image used */
+	background: url("https://i.imgur.com/mQRBAmT.jpg") no-repeat;
+    /* Set a specific height */
+    /* Create the parallax scrolling effect */
+    background-size: contain;
+	background-attachment: fixed;
+}
+
+.parallaxCoverR {
+    /* The image used */
+	background: url("https://i.imgur.com/Pt6APOB.jpg") no-repeat;
+    /* Set a specific height */
+    /* Create the parallax scrolling effect */
+    background-size: contain;
+	background-attachment: fixed;
 }
