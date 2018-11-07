@@ -8,6 +8,7 @@ var express          = require("express"),
     LocalStrategy    = require("passport-local"),
 	User             = require("./models/user"),
 	Blog             = require("./models/blog"),
+	SecretBlog       = require("./models/secretBlog"),
 	seedDB           = require("./seeds"),
     path             = require("path");
 
@@ -154,7 +155,35 @@ app.get("/seedDB",function(req,res){
 	res.redirect("back");
 	return;
 });
+/////////////////////////
+//Secret MJ VS LBJ Start
+/////////////////////////
+app.get("/secretmjvslbj",function(req,res){
+	SecretBlog.find({},function(err,blogs){
+		if(err){
+			console.log(err);
+		}
+		else{
+			res.render("secret",{Sblogs: blogs});
+		}
+	});
+});
 
+//Details of a blog
+app.get("/Sblogs/:id",function(req,res){
+	SecretBlog.findById(req.params.id,function(err,foundBlog){
+		if(err){
+			console.log("error");
+			res.redirect("/blogs");
+		}
+		else{
+			res.render("SecretShow",{Sblog:foundBlog});
+		}
+	});
+});
+///////////////////////
+//Secret MJ VS LBJ End
+///////////////////////
 app.listen(process.env.PORT||3000, process.env.IP, function(){
   console.log("Server Up...");
 });
