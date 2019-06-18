@@ -6,17 +6,37 @@ i.icon{
 	display: inline;
 }
 
+#centerCol{
+	margin-top: 100px;
+}
 .container.main{
 	margin-top: 4em;
 }
 
+#showImg{
+	width: 50%;
+}
+
+#mainImg{
+	width: 418px;
+	height: 235px;
+}
+#cardB{
+	background-color: #212529;
+	color: white;
+	font-weight: bold;
+}
+.cardSettings{
+	width: 30em;
+	margin-bottom: 20px;
+}
 .parallaxCoverL {
-	position: fixed !important;
-	width: 31.25%;
-	height: 100%;
+	/* position: fixed !important; */
+	/* width: 31.25%;
+	height: 100%; */
 	background: url("https://i.imgur.com/mQRBAmT.jpg") no-repeat;
-	background-size: cover;
-	z-index: -1;
+	/* background-size: cover;
+	z-index: -1; */
 }
 
 .parallaxCoverR {
@@ -51,4 +71,10 @@ i.icon{
 
 table, th, td {
     border: 1px solid black;
+}
+
+@media only screen and (max-width: 414px) {
+	.mainContainer{
+		width: 100% !important;
+	}
 }

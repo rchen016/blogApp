@@ -4,9 +4,9 @@
 	<div class="ui huge header"><%= blog.title %> </div>
 	<div class="ui top attached">
 		<div class="item">
-			<img class="ui centered rounded image" src="<%= blog.image %>">
+			<img id="showImg" class="ui centered rounded image" src="<%= blog.image %>">
 			<div class="content">
-				<span><%= blog.created.toDateString() %></span>
+				<span><%= blog.date %></span>
 			</div>
 			<div class="description">
 				<p>
