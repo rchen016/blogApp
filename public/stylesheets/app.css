@@ -16,7 +16,9 @@ i.icon{
 #showImg{
 	width: 50%;
 }
-
+#titleText{
+	font-weight: bold;
+}
 #mainImg{
 	width: 418px;
 	height: 235px;
@@ -24,7 +26,6 @@ i.icon{
 #cardB{
 	background-color: #212529;
 	color: white;
-	font-weight: bold;
 }
 .cardSettings{
 	width: 30em;
