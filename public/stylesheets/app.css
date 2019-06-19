@@ -32,12 +32,13 @@ i.icon{
 	margin-bottom: 20px;
 }
 .parallaxCoverL {
-	/* position: fixed !important; */
-	/* width: 31.25%;
-	height: 100%; */
+	position: fixed !important;
+	width: 35.25%;
+	height: 100%;
 	background: url("https://i.imgur.com/mQRBAmT.jpg") no-repeat;
-	/* background-size: cover;
-	z-index: -1; */
+	background-size: cover;
+	z-index: -1;
+	transform: translateX(-60%);
 }
 
 .parallaxCoverR {
@@ -47,6 +48,7 @@ i.icon{
 	background: url("https://i.imgur.com/uxxBGXt.jpg") no-repeat;
 	background-size: cover;
 	z-index: -1;
+	transform: translateX(-60%);
 }
 
 .parallaxCoverSL {
@@ -69,7 +71,18 @@ i.icon{
 #midContainer{
 	overflow: hidden;
 }
-
+#rightParallax{
+	position:fixed;
+	top:0;
+	right:0;
+	min-width: 48rem;
+}
+#rightParallaxImg{
+	width:100%;
+	position: absolute;
+	right:0;
+	top:0;
+}
 table, th, td {
     border: 1px solid black;
 }
@@ -81,4 +94,11 @@ table, th, td {
 	.cardSettings{
 		width: 24rem;
 	}
+	#rightParallax{
+		display:none;
+	}
+	#leftParallax{
+		display:none;
+	}
+
 }
