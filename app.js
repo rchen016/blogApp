@@ -54,7 +54,7 @@ app.get("/blogs",function(req,res){
 			console.log(err);
 		}
 		else{
-			res.render("index",{blogs: blogs.sort()});
+			res.render("index",{blogs: blogs.sort(),secret:false});
 		}
 	});
 });
@@ -87,7 +87,7 @@ app.get("/blogs/:id",function(req,res){
 			res.redirect("/blogs");
 		}
 		else{
-			res.render("show",{blog:foundBlog});
+			res.render("show",{blog:foundBlog,secret:false});
 		}
 	});
 });
@@ -166,7 +166,7 @@ app.get("/secretmjvslbj",function(req,res){
 			console.log(err);
 		}
 		else{
-			res.render("secret",{Sblogs: blogs});
+			res.render("secret",{Sblogs: blogs.sort(),secret:true});
 		}
 	});
 });
@@ -179,7 +179,7 @@ app.get("/Sblogs/:id",function(req,res){
 			res.redirect("/blogs");
 		}
 		else{
-			res.render("SecretShow",{Sblog:foundBlog});
+			res.render("secretShow",{Sblogs:foundBlog,secret:true});
 		}
 	});
 });

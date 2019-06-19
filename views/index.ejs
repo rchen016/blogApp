@@ -15,7 +15,11 @@
 					<div id="cardB" class="card-body">
 						<h5 class="card-title"><%= blog.date %></h5>
 						<p class="card-text"><span> <%- blog.body.substring(0,100) %>... </span></p>
-						<a href="/blogs/<%= blog._id %>" class="btn btn-primary">Read More</a>
+						<% if(!secret){ %>
+							<a href="/blogs/<%= blog._id %>" class="btn btn-primary">Read More</a>
+						<%}else{%>
+							<a href="/Sblogs/<%= blog._id %>" class="btn btn-primary">Read More</a>
+						<%}%>
 					</div>
 				</div>
 			<%})%>
