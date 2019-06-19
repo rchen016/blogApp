@@ -13,7 +13,7 @@ var express          = require("express"),
     path             = require("path");
 
 var url = process.env.DATABASEURL || "mongodb://localhost/blogApp";
-mongoose.connect(url);
+mongoose.connect(url,{useNewUrlParser: true});
 
 //Default Config
 app.set("view engine","ejs");
