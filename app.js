@@ -12,7 +12,8 @@ var express          = require("express"),
 	seedDB           = require("./seeds"),
     path             = require("path");
 
-var url = process.env.DATABASEURL || "mongodb://localhost/blogApp";
+//var url = process.env.DATABASEURL || "mongodb://localhost/blogApp";
+var url = "mongodb+srv://rcrc2:zx1230321@carmeloblog-faihp.mongodb.net/test?retryWrites=true&w=majority"
 mongoose.connect(url,{useNewUrlParser: true});
 
 //Default Config
@@ -47,12 +48,13 @@ app.get("/",function(req,res){
 
 //Show all Blog Post
 app.get("/blogs",function(req,res){
+	var test;
 	Blog.find({},function(err,blogs){
 		if(err){
 			console.log(err);
 		}
 		else{
-			res.render("index",{blogs: blogs});
+			res.render("index",{blogs: blogs.sort()});
 		}
 	});
 });
