@@ -53,11 +53,12 @@ i.icon{
 
 .parallaxCoverSL {
 	position: fixed !important;
-	width: 31.25%;
+	width: 35.25%;
 	height: 100%;
 	background: url("https://i.imgur.com/NwPEDCI.jpg") no-repeat;
 	background-size: cover;
 	z-index: -1;
+	transform: translateX(-60%);
 }
 
 .parallaxCoverSR {
@@ -83,6 +84,14 @@ i.icon{
 	right:0;
 	top:0;
 }
+
+#rightParallaxImgSR{
+	width:100%;
+	position: absolute;
+	right:0;
+	top:0;
+	height: 940px;
+}
 table, th, td {
     border: 1px solid black;
 }
@@ -99,6 +108,54 @@ table, th, td {
 	}
 	#leftParallax{
 		display:none;
+	}
+
+}
+
+@media screen and (min-width: 500px) and (max-width: 1800px) {
+	#leftParallax{
+
+	}
+	#rightParallaxImg{
+		width:85%;
+		position: absolute;
+		right:0;
+		top:0;
+	}
+
+	#rightParallaxImgSR{
+		width:60%;
+		position: absolute;
+		right:0;
+		top:0;
+	}
+
+}
+
+@media screen and (min-width: 500px) and (max-width: 1450px) {
+	#leftParallax{
+
+	}
+	#rightParallaxImg{
+		width:55%;
+		position: absolute;
+		right:0;
+		top:0;
+		height: 47rem;
+	}
+	#rightParallaxImgSR{
+		width:60%;
+		position: absolute;
+		right:0;
+		top:0;
+		height: 47rem;
+	}
+	.parallaxCoverSL{
+		width:53%;
+	}
+	.parallaxCoverL{
+		width: 30%;
+		transform: translateX(-35%);
 	}
 
 }
