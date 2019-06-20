@@ -109,7 +109,15 @@ table, th, td {
 	#leftParallax{
 		display:none;
 	}
-
+	.mjlbjfinals{
+		display:none;
+	}
+	.mjplayoffs{
+		display:none;
+	}
+	.lbjplayoffs{
+		display:none;
+	}
 }
 
 @media screen and (min-width: 500px) and (max-width: 1800px) {
