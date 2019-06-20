@@ -38,17 +38,22 @@ i.icon{
 	background: url("https://i.imgur.com/mQRBAmT.jpg") no-repeat;
 	background-size: cover;
 	z-index: -1;
-	transform: translateX(-60%);
+	/* transform: translateX(-60%); */
+	bottom: 0px;
+	left: -5%;
 }
 
 .parallaxCoverR {
 	position: fixed !important;
-	width: 31.25%;
+	width: 35.25%;
 	height: 100%;
 	background: url("https://i.imgur.com/uxxBGXt.jpg") no-repeat;
 	background-size: cover;
 	z-index: -1;
-	transform: translateX(-60%);
+	/* transform: translateX(-60%); */
+	bottom: 0px;
+	left: 70%;
+
 }
 
 .parallaxCoverSL {
@@ -58,16 +63,19 @@ i.icon{
 	background: url("https://i.imgur.com/NwPEDCI.jpg") no-repeat;
 	background-size: cover;
 	z-index: -1;
-	transform: translateX(-60%);
+	bottom: 0px;
+	left: -5%;
 }
 
 .parallaxCoverSR {
 	position: fixed !important;
-	width: 31.25%;
+	width: 35.25%;
 	height: 100%;
 	background: url("https://2centsworthofsports.files.wordpress.com/2013/01/jordan.jpg") no-repeat;
 	background-size: cover;
 	z-index: -1;
+	bottom: 0px;
+	left: 70%;
 }
 #midContainer{
 	overflow: hidden;
@@ -121,49 +129,11 @@ table, th, td {
 }
 
 @media screen and (min-width: 500px) and (max-width: 1800px) {
-	#leftParallax{
 
-	}
-	#rightParallaxImg{
-		width:85%;
-		position: absolute;
-		right:0;
-		top:0;
-	}
-
-	#rightParallaxImgSR{
-		width:60%;
-		position: absolute;
-		right:0;
-		top:0;
-	}
 
 }
 
 @media screen and (min-width: 500px) and (max-width: 1450px) {
-	#leftParallax{
 
-	}
-	#rightParallaxImg{
-		width:55%;
-		position: absolute;
-		right:0;
-		top:0;
-		height: 47rem;
-	}
-	#rightParallaxImgSR{
-		width:60%;
-		position: absolute;
-		right:0;
-		top:0;
-		height: 47rem;
-	}
-	.parallaxCoverSL{
-		width:53%;
-	}
-	.parallaxCoverL{
-		width: 30%;
-		transform: translateX(-35%);
-	}
-
+	
 }
