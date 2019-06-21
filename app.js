@@ -12,8 +12,7 @@ var express          = require("express"),
 	seedDB           = require("./seeds"),
     path             = require("path");
 
-//var url = process.env.DATABASEURL || "mongodb://localhost/blogApp";
-var url = "mongodb+srv://rcrc2:zx1230321@carmeloblog-faihp.mongodb.net/test?retryWrites=true&w=majority"
+var url = process.env.DATABASEURL || "mongodb://localhost/blogApp";
 mongoose.connect(url,{useNewUrlParser: true});
 
 //Default Config
