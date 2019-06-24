@@ -37,6 +37,7 @@ passport.deserializeUser(User.deserializeUser());
 //seedDB();
 app.use(function(req,res,next){
 	res.locals.currentUser = req.user;
+	res.locals.loginpage = false;
 	next();
 });
 
@@ -93,6 +94,7 @@ app.get("/blogs/:id",function(req,res){
 
 //Details of a blog
 app.get("/login",function(req,res){
+	res.locals.loginpage = true;
 	res.render("login");
 });
 
