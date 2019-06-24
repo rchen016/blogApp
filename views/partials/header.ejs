@@ -17,7 +17,9 @@
 				<%}else{%>
 					<div class="header item"><a href="/login"><i class="code icon"></a></i>Me7o</div>
 				<%}%>
-				<a href="/" class="item">Home</a>
+				<%if(!homepage){%>
+					<a href="/" class="item">Home</a>
+				<%}%>
 				<%if(currentUser && currentUser.username=="admin"){%>
 					<a href="/blogs/new" class="item">New Post</a>
 					<a href="/seedDB" class="item">Seed DB</a>
