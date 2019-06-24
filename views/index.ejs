@@ -11,7 +11,7 @@
 		<div class="col-md-12">
 			<% blogs.forEach(function(blog){ %>
 				<div class="cardSettings card mx-auto">
-					<img id="mainImg" class="card-img-top" src="<%= blog.image %>" alt="Card image cap">
+					<img id="mainImg" class="card-img-top showImg" src="<%= blog.image %>" alt="Card image cap">
 					<div id="cardB" class="card-body">
 						<h5 class="card-title"><%= blog.date %></h5>
 						<p class="card-text"><span> <%- blog.body.substring(0,100) %>... </span></p>
