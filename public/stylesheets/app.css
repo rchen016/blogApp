@@ -27,7 +27,9 @@ i.icon{
 	background-color: #212529;
 	color: white;
 }
-
+.statsTable{
+	display: none;
+}
 .showImg{
 	margin-bottom: 20px;
 }
